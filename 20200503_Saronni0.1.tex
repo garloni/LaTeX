@@ -1,0 +1,196 @@
+\documentclass[fleqn]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage{mathtools, gensymb}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+\usepackage{cancel}
+
+
+\title{Verifica Telecomunicazioni}
+\author{Saronni Gabriele}
+\date{05 Maggio 2020}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+\begin{enumerate}
+    \item Determinare modulo e fase del numero complesso $C = 3 - j5$.
+        \begin{align*}
+            &Modulo: |C| = \sqrt{3^2 + (-5^2)}= 5.83\Omega \\
+            &Fase: C = \tan^{-1}\Big(\frac{-5}{3}\Big)= -59.03\degree
+        \end{align*}
+    \item Determinare modulo e fase della somma dei numeri complessi $A = -2 + j4$ e $B = 3 + j6$. 
+        \begin{align*}
+            &A + B = -2 + j4 + 3 + j6 = 1 + j10 \\ \\
+            &Modulo: |A| = \sqrt{1^2 + 10^2}= 10.04\Omega \\
+            &Fase: A = \tan^{-1}\Big(\frac{10}{1}\Big)= 84.28\degree
+        \end{align*}
+    \item Determinare modulo e fase del prodotto del numero complesso $A = 7 + j5$ per il fattore $-j$. 
+        \begin{align*}
+            &A \cdot (-j) = (7 + j5) \cdot (-j) = -j7-j^2 5 = 5-j7 \\ \\
+            &Modulo: |A\cdot B| = \sqrt{5^2 + (-7^2)}= 8.60\Omega \\
+            &Fase: A\cdot B = \tan^{-1}\Big(\frac{7}{5}\Big)= 54.46\degree
+        \end{align*}
+    \item Determinare modulo e fase del prodotto dei numeri complessi $A = 6 + j2$ e $B = 2 - j7$. 
+        \begin{align*}
+            A\cdot B = &(6 + j2)\cdot (2 - j7) = \\
+            &12-j42+j4-j^2 14 = \\
+            &12-j38+14= 26-j38 \\
+        \end{align*}
+        \begin{align*}
+            &Modulo: |A\cdot B| = \sqrt{26^2 + (-38^2)}= 46.04\Omega \\
+            &Fase: A\cdot B = \tan^{-1}\Big(\frac{38}{26}\Big)= -55.61\degree
+        \end{align*}
+    \item Determinare modulo e fase del rapporto dei numeri complessi $A = -2 + j5$ e $B = 4 - j8$.
+        \begin{align*}
+                \frac{A}{B} = &\frac{-2 + j5}{4-j8} \cdot \frac{4+j8}{4+j8} = \frac{(-2+j5)\cdot(4+j8)}{(4-j8)\cdot(4+j8)} = \frac{-8-j16+j20+j^2 40}{16\cancel{+j32}\cancel{-j32}-j^2 64} = \\
+                &\frac{-8+j4-40}{16+64} = \frac{-48+j4}{80}= \frac{-48}{80} + \frac{j4}{80} = -0.6 + j0.05 \\
+            \end{align*}
+            \begin{align*}
+                &Modulo: \Big|\frac{A}{B}\Big| = \sqrt{(-0.6^2) + 0.05^2}= 0.60\Omega \\
+                &Fase: \frac{A}{B}= \tan^{-1}\Big(\frac{0.05}{-0.6}\Big)= -4.76\degree + 180\degree = 175.23\degree
+            \end{align*}
+        \item Tracciare i diagrammi vettoriali dei primi 4 punti.
+        \pagebreak
+        \item Determinare fase e modulo dell'impedenza ohmico-induttiva $RL$ e profilo del modulo e della fase al variare della frequenza. La resistenza $R = 3\Omega$ e l'induttanza $L = 300\mu H$ alle frequenze $f = 0Hz, f = 3kHz, f = 0.9Mhz$.
+        \begin{center}
+            \begin{circuitikz} \draw 
+                (0,0) to [R, l=R] (2,0)
+                to [L, l=L] (4,0) 
+                ;
+            \end{circuitikz}
+        \end{center}
+        \begin{align*}
+            &R = 3\Omega \\
+            &L = 300\mu H \Rightarrow 3\cdot 10^{-4} \Omega \\
+            &f_a = 0Hz \\
+            &f_b = 3kHz \Rightarrow 3\cdot 10^3 Hz \\
+            &f_c = 0,9Mhz \Rightarrow 9\cdot 10^6 MHz \\ \\ 
+            &\omega = 2\pi\cdot f \\
+            &X_L = j\omega \cdot L \\
+            &Z = R + X_L  \\
+            &Z = \sqrt{R^2+X_L^2} \\
+            &LZ = \tan^{-1}\Big(\frac{X_L}{R}\Big)\\ \\
+            &f_a \Rightarrow R+X_L = 3 + j2\pi \cdot 0\cdot (3\cdot 10^{-4}) = 3+j0 \\
+            &f_b \Rightarrow R+X_L = 3 + j2\pi \cdot (3\cdot 10^3)\cdot (3\cdot 10^{-4}) = 3+j5,65 \\
+            &f_c \Rightarrow R+X_L = 3 + j2\pi \cdot (9\cdot 10^6)\cdot (3\cdot 10^{-4}) = 3+j16964,60 \\
+        \end{align*}
+        \begin{enumerate}
+            \item = $3 + j0$
+            \begin{align*}
+                &Modulo: |Z| = \sqrt{3^2+\cancel{0^2}} = 3\Omega \\
+                &Fase: LZ = \tan^{-1}\Big(\frac{0}{3}\Big) = 0\degree
+            \end{align*}
+            \item = 3 + j5,65
+            \begin{align*}
+                &Modulo: |Z| = \sqrt{3^2+(5,65)^2} = 6,39\Omega \\
+                &Fase: LZ = \tan^{-1}\Big(\frac{5,65}{3}\Big) = 62,03\degree
+            \end{align*}
+            \item = 3 + j16964,60
+            \begin{align*}
+                &Modulo: |Z| = \sqrt{3^2+16964,60^2} = 50893,8\Omega \\
+                &Fase: LZ = \tan^{-1}\Big(\frac{16964,60}{3}\Big) = 89,98\degree
+            \end{align*}
+        \end{enumerate}
+        \pagebreak
+        \item Determinare fase e modulo dell'impedenza ohmico-capacitiva $RC$ e profilo del modulo e del modulo e della fase al variare della frequenza. La resistenza $R = 0.5\Omega$ e capacità $C = 2nF$ alle frequenze $f = 0Hz, f = 1.5MHz, f = 9GHz$.
+    \begin{center}
+        \begin{circuitikz} \draw 
+            (0,0) to [R, l=R] (2,0)
+            to [C, l=C] (4,0) 
+            ;
+    \end{circuitikz}
+        \end{center}
+        \begin{align*}
+            &R = 0,5\Omega \\
+            &C = 2nF \Rightarrow 2\cdot 10^{-9} \\ 
+            &f_a = 0Hz \\
+            &f_b = 1,5MHz \Rightarrow 15\cdot 10^5 \\
+            &f_c = 9GHz \Rightarrow 9\cdot 10^9 \\ \\
+            &\omega = 2\pi\cdot f \\
+            &X_C = \frac{1}{j\omega \cdot C} \\
+            &Z = R+X_C \\
+            &Z = \sqrt{R^2+\Big(\frac{1}{X_C}}\Big)^2 \\
+            &CZ = \tan^{-1}\Big(\frac{\frac{1}{X_C}}{R}\Big)\\ \\
+            &f_a \Rightarrow R+X_C = 0,5 + \frac{1}{j2\pi\cdot 0\cdot (2\cdot 10^{-9})}= 0,5 - j\infty\\
+            &f_b \Rightarrow R+X_C = 0,5 + \frac{1}{j2\pi\cdot (15\cdot 10^5)\cdot (2\cdot 10^{-9})}= 0,5-j53,05\\
+            &f_c \Rightarrow R+X_C = 0,5 + \frac{1}{j2\pi\cdot (9\cdot 10^9)\cdot (2\cdot 10^{-9})}= 0,5-(j88\cdot 10^{-3})
+        \end{align*}
+        \begin{enumerate}
+            \item = $0,5 -j\infty$
+            \begin{align*}
+                &Modulo: |Z| = \sqrt{0,5^2+\Big(\frac{1}{-\infty}\Big)^2}= \infty \\
+                &Fase: CZ = \tan^{-1} \Big(\frac{\frac{1}{-\infty}}{0,5}\Big)= -90\degree (comportamento capacitivo)
+            \end{align*}
+            \item = $0,5 -j53,05$
+            \begin{align*}
+                &Modulo: |Z| = \sqrt{0,5^2+\Big(\frac{1}{-53,05}\Big)^2}= 0,50\Omega \\
+                &Fase: CZ = \tan^{-1} \Big(\frac{\frac{1}{-53,05}}{0,5}\Big)= -2,15\degree
+            \end{align*}
+            \item = $0,5 -j88\cdot 10^{-3}$
+            \begin{align*}
+                &Modulo: |Z| = \sqrt{0,5^2+\Big(\frac{1}{-88\cdot 10^{-3}}\Big)^2}= 129,63\Omega \\
+                &Fase: CZ = \tan^{-1} \Big(\frac{\frac{1}{-88\cdot 10^{-3}}}{0,5}\Big)= -80,01\degree
+            \end{align*}
+        \end{enumerate}
+        \pagebreak
+        \item Determinare fase e modulo dell'impedenza ohmico-induttiva $RL$ alla frequenza $f = 30kHz$. \par Determinare il profilo del modulo e della fase al variare della frequenza. La resistenza $R = 30\Omega$ e l'induttanza $L = 100\mu H$
+    \begin{center}
+        \begin{circuitikz} \draw (0,0)
+            to[V,v=$V_1$, *-*] (0,2) % The voltage source
+            to [R, l=R, *-*] (2,2) % The resistor
+            to[L, l=L, *-*] (2,0) -- (0,0) % L
+   			(2,2) -- (4,2)
+   			to[V,v=$V_2$, *-*] (4,0)
+   			(2,0) -- (4,0)
+            %to[short] (2,2) % line
+%            to [V, l=$V_1$] (0,0) 
+        ;
+        \end{circuitikz}
+        \end{center}
+        \begin{align*}
+            &R = 30\Omega \\
+            &L = 100\mu H \Rightarrow 1\cdot 10^{-4} \Omega \\
+            &f = 30kHz \Rightarrow 3\cdot 10^4 Hz \\ \\
+            &\omega = 2\pi\cdot f \\
+            &X_L = j\omega \cdot L \\
+            &Z = R + X_L  \\
+            &Z = \sqrt{R^2+X_L^2} \\
+            &LZ = \tan^{-1}\Big(\frac{X_L}{R}\Big)\\ \\
+            &R + X_L = 30 + j2\pi \cdot (1\cdot 10^{-4})\cdot (3\cdot 10^4) = 30+j18,84 \\ \\
+            &Modulo: |Z| = \sqrt{30^2 + 18,84^2} = 35,42\Omega \\
+            &Fase: LZ = \tan^{-1}\Big(\frac{18,84}{30}\Big) = 32,12\degree
+        \end{align*}
+        \pagebreak
+    \item Determinare fase e modulo dell'impedenza ohmico-capacitiva $RC$ alla frequenza $f = 20MHz$. \par Determinare il profilo del modulo e della fase al variare della frequenza. La resistenza $R = 10\Omega$ e capacità $C = 2nF$
+    \begin{center}
+        \begin{circuitikz} \draw (0,0)
+            to[V,v=$V_1$, *-*] (0,2) % The voltage source
+            to [R, l=R, *-*] (2,2) % The resistor
+            to[C, l=C, *-*] (2,0) -- (0,0) % L
+   			(2,2) -- (4,2)
+   			to[V,v=$V_2$, *-*] (4,0)
+   			(2,0) -- (4,0)
+            %to[short] (2,2) % line
+%            to [V, l=$V_1$] (0,0) 
+        ;
+        \end{circuitikz}
+        \end{center}
+        \begin{align*}
+            &R = 10\Omega \\
+            &C = 2nF \Rightarrow 2\cdot 10^{-9} \\ \\
+			&f = 20MHz \Rightarrow 2\cdot 10^7 \\            
+            &\omega = 2\pi\cdot f \\
+            &X_C = \frac{1}{j\omega \cdot C} \\
+            &Z = R+X_C \\
+            &Z = \sqrt{R^2+\Big(\frac{1}{X_C}}\Big)^2 \\
+            &CZ = \tan^{-1}\Big(\frac{\frac{1}{X_C}}{R}\Big)\\ \\
+            &R+X_C = 10 + \frac{1}{j2\pi\cdot (2\cdot 10^7)\cdot (2\cdot 10^{-9})}= 10-j3,97\\ \\
+            &Modulo: |Z| = \sqrt{10^2+\Big(\frac{1}{-3,97}\Big)^2}= 10\Omega \\
+            &Fase: CZ = \tan^{-1} \Big(\frac{\frac{1}{-3,97}}{10}\Big)= -1,44\degree
+        \end{align*}
+\end{enumerate}
+
+
+\end{document}
