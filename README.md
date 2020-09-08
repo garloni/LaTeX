@@ -1,4 +1,4 @@
 # LaTeX
 Some diddling I did with LaTeX
 
-![triangle](triangle.jpg)
+![triangle](triangle.png)
